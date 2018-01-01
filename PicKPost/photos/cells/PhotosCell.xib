@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photo_cell" id="gTV-IL-0wX" customClass="PhotosCell" customModule="PicKPost" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="441" height="279"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="441" height="279"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v04-OX-mh5">
+                        <rect key="frame" x="0.0" y="0.0" width="441" height="279"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EzP-IG-orb">
+                                <rect key="frame" x="0.0" y="0.0" width="441" height="279"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gig-5E-Ee0">
+                                <rect key="frame" x="0.0" y="223" width="441" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-Vp-Hkp">
+                                        <rect key="frame" x="10" y="0.0" width="331" height="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gti-zt-n1e">
+                                        <rect key="frame" x="331" y="0.0" width="110" height="56.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3e-df-3CN">
+                                                <rect key="frame" x="45.5" y="18.5" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="BRf-Ig-Iym"/>
+                                                    <constraint firstAttribute="width" secondItem="V3e-df-3CN" secondAttribute="height" multiplier="1:1" id="T1H-p4-0YN"/>
+                                                </constraints>
+                                                <state key="normal" image="share_white_icon"/>
+                                                <connections>
+                                                    <action selector="onClickImageShare:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Qzi-0o-grG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="V3e-df-3CN" firstAttribute="centerY" secondItem="gti-zt-n1e" secondAttribute="centerY" id="DOk-FO-h6I"/>
+                                            <constraint firstItem="V3e-df-3CN" firstAttribute="centerX" secondItem="gti-zt-n1e" secondAttribute="centerX" id="qd3-UC-Ymi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.45968000856164382" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gti-zt-n1e" secondAttribute="trailing" id="2EM-tm-f1L"/>
+                                    <constraint firstAttribute="bottom" secondItem="FYa-Vp-Hkp" secondAttribute="bottom" id="8FI-ku-YCk"/>
+                                    <constraint firstAttribute="bottom" secondItem="gti-zt-n1e" secondAttribute="bottom" id="Dfa-Y5-0fa"/>
+                                    <constraint firstItem="gti-zt-n1e" firstAttribute="top" secondItem="Gig-5E-Ee0" secondAttribute="top" id="ERF-JP-JVn"/>
+                                    <constraint firstItem="FYa-Vp-Hkp" firstAttribute="leading" secondItem="Gig-5E-Ee0" secondAttribute="leading" constant="10" id="cMY-aH-equ"/>
+                                    <constraint firstItem="FYa-Vp-Hkp" firstAttribute="width" secondItem="Gig-5E-Ee0" secondAttribute="width" multiplier="0.75" id="dUo-Wl-PU5"/>
+                                    <constraint firstItem="gti-zt-n1e" firstAttribute="width" secondItem="Gig-5E-Ee0" secondAttribute="width" multiplier="0.25" id="lM0-h2-KrG"/>
+                                    <constraint firstItem="FYa-Vp-Hkp" firstAttribute="top" secondItem="Gig-5E-Ee0" secondAttribute="top" id="txM-VV-Aju"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EzP-IG-orb" firstAttribute="leading" secondItem="v04-OX-mh5" secondAttribute="leading" id="09j-kH-tof"/>
+                            <constraint firstAttribute="trailing" secondItem="EzP-IG-orb" secondAttribute="trailing" id="E1Y-kc-aRg"/>
+                            <constraint firstItem="EzP-IG-orb" firstAttribute="top" secondItem="v04-OX-mh5" secondAttribute="top" id="Jw6-h5-e3w"/>
+                            <constraint firstAttribute="trailing" secondItem="Gig-5E-Ee0" secondAttribute="trailing" id="Ndt-L9-kfa"/>
+                            <constraint firstAttribute="bottom" secondItem="Gig-5E-Ee0" secondAttribute="bottom" id="Pl0-dJ-YrC"/>
+                            <constraint firstAttribute="bottom" secondItem="EzP-IG-orb" secondAttribute="bottom" id="aaQ-w0-a6g"/>
+                            <constraint firstItem="Gig-5E-Ee0" firstAttribute="height" secondItem="EzP-IG-orb" secondAttribute="height" multiplier="0.2" id="fmZ-oz-lwT"/>
+                            <constraint firstItem="Gig-5E-Ee0" firstAttribute="leading" secondItem="v04-OX-mh5" secondAttribute="leading" id="q8b-zS-lmD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="v04-OX-mh5" secondAttribute="bottom" id="Fwb-WH-pyF"/>
+                <constraint firstItem="v04-OX-mh5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="O3A-J1-IE6"/>
+                <constraint firstItem="v04-OX-mh5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hMq-9J-SJq"/>
+                <constraint firstAttribute="trailing" secondItem="v04-OX-mh5" secondAttribute="trailing" id="kIG-42-jyK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="441" height="279"/>
+            <connections>
+                <outlet property="imageNameLabel" destination="FYa-Vp-Hkp" id="K0S-4B-s1y"/>
+                <outlet property="photoImageView" destination="EzP-IG-orb" id="q2R-vb-Xhg"/>
+                <outlet property="shareButton" destination="V3e-df-3CN" id="PgA-4b-O4K"/>
+            </connections>
+            <point key="canvasLocation" x="102.5" y="114.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="share_white_icon" width="100" height="100"/>
+    </resources>
+</document>
