@@ -23,6 +23,10 @@
 		3A15246E1FB2E31B0058BADC /* FacebookFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15246D1FB2E31B0058BADC /* FacebookFriendsViewController.swift */; };
 		3A1524711FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15246F1FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.swift */; };
 		3A1524721FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1524701FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.xib */; };
+		3A19FCE11FFCC14400367FFC /* SearchSourceDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19FCE01FFCC14400367FFC /* SearchSourceDestinationViewController.swift */; };
+		3A19FCE31FFCD9BF00367FFC /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19FCE21FFCD9BF00367FFC /* LocationSearchTable.swift */; };
+		3A19FCE61FFCF36500367FFC /* MapSearchItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19FCE41FFCF36500367FFC /* MapSearchItemCollectionViewCell.swift */; };
+		3A19FCE71FFCF36500367FFC /* MapSearchItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A19FCE51FFCF36500367FFC /* MapSearchItemCollectionViewCell.xib */; };
 		3A23BAE41FE91E150067B652 /* AKImageCropperOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23BAD41FE91E150067B652 /* AKImageCropperOverlayView.swift */; };
 		3A23BAE51FE91E150067B652 /* AKImageCropperOverlayViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23BAD51FE91E150067B652 /* AKImageCropperOverlayViewConfiguration.swift */; };
 		3A23BAE61FE91E150067B652 /* AKImageCropperOverlayViewConfigurationCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23BAD61FE91E150067B652 /* AKImageCropperOverlayViewConfigurationCorner.swift */; };
@@ -89,6 +93,10 @@
 		3A15246D1FB2E31B0058BADC /* FacebookFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendsViewController.swift; sourceTree = "<group>"; };
 		3A15246F1FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A1524701FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookFriendCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		3A19FCE01FFCC14400367FFC /* SearchSourceDestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSourceDestinationViewController.swift; sourceTree = "<group>"; };
+		3A19FCE21FFCD9BF00367FFC /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		3A19FCE41FFCF36500367FFC /* MapSearchItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A19FCE51FFCF36500367FFC /* MapSearchItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapSearchItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		3A23BAD41FE91E150067B652 /* AKImageCropperOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperOverlayView.swift; sourceTree = "<group>"; };
 		3A23BAD51FE91E150067B652 /* AKImageCropperOverlayViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperOverlayViewConfiguration.swift; sourceTree = "<group>"; };
 		3A23BAD61FE91E150067B652 /* AKImageCropperOverlayViewConfigurationCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKImageCropperOverlayViewConfigurationCorner.swift; sourceTree = "<group>"; };
@@ -293,6 +301,8 @@
 			children = (
 				3A3511EB1FA8A6C7001D27AF /* PhotosCell.swift */,
 				3A3511EC1FA8A6C7001D27AF /* PhotosCell.xib */,
+				3A19FCE41FFCF36500367FFC /* MapSearchItemCollectionViewCell.swift */,
+				3A19FCE51FFCF36500367FFC /* MapSearchItemCollectionViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -300,6 +310,7 @@
 		3AF2FBA51FA9B1CD00E2AF11 /* facebook */ = {
 			isa = PBXGroup;
 			children = (
+				3A19FCE21FFCD9BF00367FFC /* LocationSearchTable.swift */,
 				3A14CDDC1FB19F1D00A2A203 /* cells */,
 				3AF2FBAD1FA9C92B00E2AF11 /* FacebookLoginViewController.swift */,
 				3A5FB74A1FAC79BF0015207D /* PostPhotoOnFacebookViewController.swift */,
@@ -309,6 +320,7 @@
 				3AD2BA381FB337F70022A01F /* FacebookFeedsControllerViewController.swift */,
 				3AFBE3F21FBAC9FB0022A62A /* OpenFacebookPostViewController.swift */,
 				3AFBE3F41FBAD76A0022A62A /* RealTimeNavigationViewController.swift */,
+				3A19FCE01FFCC14400367FFC /* SearchSourceDestinationViewController.swift */,
 			);
 			path = facebook;
 			sourceTree = "<group>";
@@ -402,6 +414,7 @@
 				3A14CDEC1FB1DC8600A2A203 /* LoadingCollectionViewCell.xib in Resources */,
 				3A10CD451FBC562A00835F1C /* PhotoEditorCellCollectionViewCell.xib in Resources */,
 				3A3511EE1FA8A6C7001D27AF /* PhotosCell.xib in Resources */,
+				3A19FCE71FFCF36500367FFC /* MapSearchItemCollectionViewCell.xib in Resources */,
 				3A67DEC11FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.xib in Resources */,
 				3A1524721FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.xib in Resources */,
 				3A14CDE81FB1CDF500A2A203 /* FacebookPhotoCellCollectionViewCell.xib in Resources */,
@@ -514,6 +527,9 @@
 				3AFBE3F31FBAC9FB0022A62A /* OpenFacebookPostViewController.swift in Sources */,
 				3A23BAE61FE91E150067B652 /* AKImageCropperOverlayViewConfigurationCorner.swift in Sources */,
 				3A67DEC01FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.swift in Sources */,
+				3A19FCE31FFCD9BF00367FFC /* LocationSearchTable.swift in Sources */,
+				3A19FCE11FFCC14400367FFC /* SearchSourceDestinationViewController.swift in Sources */,
+				3A19FCE61FFCF36500367FFC /* MapSearchItemCollectionViewCell.swift in Sources */,
 				3A23BAE81FE91E150067B652 /* AKImageCropperOverlayViewConfigurationGrid.swift in Sources */,
 				3A1524711FB2F94B0058BADC /* FacebookFriendCellCollectionViewCell.swift in Sources */,
 				3A26F9541FA2F54700416A21 /* ViewController.swift in Sources */,

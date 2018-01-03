@@ -15,7 +15,9 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
     let locationManager = CLLocationManager()
     var myLocations : [CLLocation] = []
     
+    @IBOutlet weak var searchDirectionButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    var myRoute : MKRoute!
     
     override func viewDidLoad()
     {
@@ -25,9 +27,23 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
         mapView.showsUserLocation = true
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
         initActionBar()
+        makeButtonRounded()
+    
+    }
+    
+    
+    @IBAction func openSearchDirection(_ sender: Any)
+    {
+        let popvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "source_destination_controller") as! SearchSourceDestinationViewController
+        popvc.mapView = mapView
+        popvc.realTimeNavigationController = self
+        self.addChildViewController(popvc)
         
+        popvc.view.frame = self.view.frame
         
-  
+        self.view.addSubview(popvc.view)
+        
+        popvc.didMove(toParentViewController: self)
     }
     
  
@@ -76,7 +92,7 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
             return polylineRenderer
         } */
         
-        if overlay is MKCircle
+      /*  if overlay is MKCircle
         {
             let renderer = MKCircleRenderer(overlay: overlay)
             renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
@@ -90,11 +106,28 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
             renderer.lineWidth = 3
             return renderer
         }
+        else
+        {
+            let myLineRenderer = MKPolylineRenderer(polyline: myRoute.polyline)
+            myLineRenderer.strokeColor = UIColor.red
+            myLineRenderer.lineWidth = 3
+            return myLineRenderer
+        }  */
         
-        return MKOverlayRenderer()
+        let myLineRenderer = MKPolylineRenderer(polyline: myRoute.polyline)
+        myLineRenderer.strokeColor = UIColor.red
+        myLineRenderer.lineWidth = 3
+        return myLineRenderer
      
     }
     
+    
+    fileprivate func makeButtonRounded()
+    {
+        searchDirectionButton.layer.cornerRadius = 10.0
+        searchDirectionButton.layer.borderWidth = 1
+        searchDirectionButton.clipsToBounds = true
+    }
     
     
     func initActionBar()
@@ -121,6 +154,76 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
         }
     }
     
+    func onSelectDirection(_ source : MKMapItem, _  destination : MKMapItem)
+    {
+        let point1 = MKPointAnnotation()
+        let point2 = MKPointAnnotation()
+        
+        point1.coordinate = CLLocationCoordinate2DMake(source.placemark.coordinate.latitude,source.placemark.coordinate.longitude)
+        point1.title = source.name
+        point1.subtitle = source.name
+        mapView.addAnnotation(point1)
+        
+        print("========== \(source.name)")
+        
+        point2.coordinate = CLLocationCoordinate2DMake(destination.placemark.coordinate.latitude,destination.placemark.coordinate.longitude)
+        point2.title = destination.name
+        point2.subtitle = destination.name
+        mapView.addAnnotation(point2)
+        mapView.centerCoordinate = point2.coordinate
+        mapView.delegate = self
+        
+        //Span of the map
+        mapView.setRegion(MKCoordinateRegionMake(point2.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+        
+        let directionsRequest = MKDirectionsRequest()
+        let markTaipei = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point1.coordinate.latitude, point1.coordinate.longitude), addressDictionary: nil)
+        let markChungli = MKPlacemark(coordinate: CLLocationCoordinate2DMake(point2.coordinate.latitude, point2.coordinate.longitude), addressDictionary: nil)
+        
+        directionsRequest.source = MKMapItem(placemark: markChungli)
+        directionsRequest.destination = MKMapItem(placemark: markTaipei)
+        
+        directionsRequest.transportType = MKDirectionsTransportType.automobile
+        let directions = MKDirections(request: directionsRequest)
+        
+        directions.calculate(completionHandler: {
+            response, error in
+            
+            if error == nil
+            {
+                print("Rout found")
+                self.myRoute = response!.routes[0] as MKRoute
+                self.mapView.add(self.myRoute.polyline)
+            }
+            else
+            {
+                print("Error while fgetching rout : \(error)")
+            }
+            
+        })
+    }
+    
+    
+    
+    func mapView(_: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        if annotation is MKUserLocation {
+            //return nil so map view draws "blue dot" for standard user location
+            return nil
+        }
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        pinView?.pinTintColor = UIColor.orange
+        pinView?.canShowCallout = true
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: CGPoint(x: 0,y :0), size: smallSquare))
+        button.setBackgroundImage(UIImage(named: "car"), for: .normal)
+        button.addTarget(self, action: #selector(SearchSourceDestinationViewController.getDirections), for: .touchUpInside)
+        pinView?.leftCalloutAccessoryView = button
+        return pinView
+    }
+    
+  
 
     override func didReceiveMemoryWarning()
     {

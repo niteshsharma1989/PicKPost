@@ -22,7 +22,8 @@ SOFTWARE.
 
 import UIKit
 
-public class KYEmbedMainControllerSegue: UIStoryboardSegue {
+public class KYEmbedMainControllerSegue: UIStoryboardSegue
+{
     
     final override public func perform() {
         if let sourceViewController = source as? KYDrawerController {
