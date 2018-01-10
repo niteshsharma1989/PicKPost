@@ -10,6 +10,7 @@ import UIKit
 import FacebookCore
 import CoreData
 import FBSDKCoreKit
+//import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -26,10 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+       // GMSServices.provideAPIKey("AIzaSyAfp0ZXkqTyKrS2XQlR2-IX8LmlZRBrrOU")
+   //     GMSPlacesClient.provideAPIKey("AIzaSyAfp0ZXkqTyKrS2XQlR2-IX8LmlZRBrrOU")
+        
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         if let accessToken = FBSDKAccessToken.current()
         {
-              print(" logged In.")
+           print(" logged In.")
            launchHomeController()
         }
         else
@@ -135,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
     }
     
-    func setNavigationDrawerMainController()
+    func setNavigationDrawerMainController1()
     {
         let mainViewController   = storyboard!.instantiateViewController(withIdentifier: StoryBoardIDs.NAVIGATION_CONTROLLER_ID)//  landing
         drawerController?.mainViewController = UINavigationController(rootViewController: mainViewController)
@@ -145,6 +150,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         }
         
     }
+    
+    
+    func setNavigationDrawerMainController()
+    {
+        let mainViewController   = storyboard!.instantiateViewController(withIdentifier: "gms_map_vc")//  landing
+        drawerController?.mainViewController = UINavigationController(rootViewController: mainViewController)
+        if let window = self.window
+        {
+            window.rootViewController = drawerController
+        }
+        
+    }
+    
+    
+    //gms_map_vc
     func closeDrawer()
     {
         drawerController?.setDrawerState(.closed, animated: true)

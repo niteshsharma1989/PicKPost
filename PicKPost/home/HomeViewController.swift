@@ -40,7 +40,45 @@ class HomeViewController: UIViewController
         let logoutGesture = UITapGestureRecognizer(target: self, action: #selector(self.openWorkInfo(_:)))
         workInfoCell.addGestureRecognizer(logoutGesture)
         
+        
+        let galleryGesture = UITapGestureRecognizer(target: self, action: #selector(self.showCoverPhoto(_:)))
+        coverImageView.isUserInteractionEnabled = true
+        coverImageView.addGestureRecognizer(galleryGesture)
+        
+        let profileImageGesture = UITapGestureRecognizer(target: self, action: #selector(self.showProfilePhoto(_:)))
+        profileImage.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(profileImageGesture)
+        
     }
+    
+    @objc func showCoverPhoto( _ sender : UITapGestureRecognizer)
+    {
+    
+        let imageInfo   = GSImageInfo(image: coverImageView.image!, imageMode: .aspectFit)
+        let transitionInfo = GSTransitionInfo(fromView: coverImageView!)
+        let imageViewer = GSImageViewerController(imageInfo: imageInfo, transitionInfo: transitionInfo)
+        print("======== Showing images")
+        imageViewer.dismissCompletion = {
+            print("dismissCompletion")
+        }
+        
+        present(imageViewer, animated: true, completion: nil)
+    }
+    
+    @objc func showProfilePhoto( _ sender : UITapGestureRecognizer)
+    {
+        
+        let imageInfo   = GSImageInfo(image: profileImage.image!, imageMode: .aspectFit)
+        let transitionInfo = GSTransitionInfo(fromView: profileImage!)
+        let imageViewer = GSImageViewerController(imageInfo: imageInfo, transitionInfo: transitionInfo)
+        print("======== Showing images")
+        imageViewer.dismissCompletion = {
+            print("dismissCompletion")
+        }
+        
+        present(imageViewer, animated: true, completion: nil)
+    }
+    
     
     
     @objc func openWorkInfo( _ sender : UITapGestureRecognizer)

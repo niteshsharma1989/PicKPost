@@ -58,6 +58,8 @@
 		3A3511E91FA89E84001D27AF /* PhotosHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3511E81FA89E84001D27AF /* PhotosHelper.swift */; };
 		3A3511ED1FA8A6C7001D27AF /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3511EB1FA8A6C7001D27AF /* PhotosCell.swift */; };
 		3A3511EE1FA8A6C7001D27AF /* PhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3511EC1FA8A6C7001D27AF /* PhotosCell.xib */; };
+		3A4975E51FFF8FC300DF5958 /* GSImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4975E41FFF8FC200DF5958 /* GSImageViewerController.swift */; };
+		3A567C252004ED9000F3F74B /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A567C242004ED9000F3F74B /* GoogleMapViewController.swift */; };
 		3A5FB74B1FAC79BF0015207D /* PostPhotoOnFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5FB74A1FAC79BF0015207D /* PostPhotoOnFacebookViewController.swift */; };
 		3A67DEC01FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67DEBE1FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.swift */; };
 		3A67DEC11FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A67DEBF1FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.xib */; };
@@ -131,6 +133,13 @@
 		3A3511E81FA89E84001D27AF /* PhotosHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosHelper.swift; sourceTree = "<group>"; };
 		3A3511EB1FA8A6C7001D27AF /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		3A3511EC1FA8A6C7001D27AF /* PhotosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCell.xib; sourceTree = "<group>"; };
+		3A4975E41FFF8FC200DF5958 /* GSImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSImageViewerController.swift; sourceTree = "<group>"; };
+		3A567C142004B54700F3F74B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		3A567C162004B55E00F3F74B /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Pods/GooglePlaces/Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		3A567C1E2004DF9800F3F74B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		3A567C1F2004DF9800F3F74B /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps.framework; sourceTree = "<group>"; };
+		3A567C202004DF9800F3F74B /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Pods/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		3A567C242004ED9000F3F74B /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 		3A5FB74A1FAC79BF0015207D /* PostPhotoOnFacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoOnFacebookViewController.swift; sourceTree = "<group>"; };
 		3A67DEBE1FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fb_status_cellCollectionViewCell.swift; sourceTree = "<group>"; };
 		3A67DEBF1FB98B2D00AF91D5 /* fb_status_cellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = fb_status_cellCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -228,6 +237,7 @@
 		3A26F9501FA2F54700416A21 /* PicKPost */ = {
 			isa = PBXGroup;
 			children = (
+				3A4975E31FFF8F1D00DF5958 /* image_viewer */,
 				3A0DF9531FAB07C600C1EE45 /* PicKPost.entitlements */,
 				3A23BAD31FE91E150067B652 /* AKImageCropperView */,
 				3AF2FBA51FA9B1CD00E2AF11 /* facebook */,
@@ -307,6 +317,14 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		3A4975E31FFF8F1D00DF5958 /* image_viewer */ = {
+			isa = PBXGroup;
+			children = (
+				3A4975E41FFF8FC200DF5958 /* GSImageViewerController.swift */,
+			);
+			path = image_viewer;
+			sourceTree = "<group>";
+		};
 		3AF2FBA51FA9B1CD00E2AF11 /* facebook */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +339,7 @@
 				3AFBE3F21FBAC9FB0022A62A /* OpenFacebookPostViewController.swift */,
 				3AFBE3F41FBAD76A0022A62A /* RealTimeNavigationViewController.swift */,
 				3A19FCE01FFCC14400367FFC /* SearchSourceDestinationViewController.swift */,
+				3A567C242004ED9000F3F74B /* GoogleMapViewController.swift */,
 			);
 			path = facebook;
 			sourceTree = "<group>";
@@ -328,6 +347,11 @@
 		3AFE39B71FAA083E009CD2FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A567C1F2004DF9800F3F74B /* GoogleMaps.framework */,
+				3A567C1E2004DF9800F3F74B /* GoogleMapsBase.framework */,
+				3A567C202004DF9800F3F74B /* GoogleMapsCore.framework */,
+				3A567C162004B55E00F3F74B /* GooglePlaces.framework */,
+				3A567C142004B54700F3F74B /* GoogleMapsBase.framework */,
 				B20382906B52D0FE324A0D7A /* Pods_PicKPost.framework */,
 			);
 			name = Frameworks;
@@ -484,9 +508,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PicKPost/Pods-PicKPost-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -508,9 +536,11 @@
 				3A14CDE21FB1A31200A2A203 /* WorkInfoViewController.swift in Sources */,
 				3A14CDEB1FB1DC8600A2A203 /* LoadingCollectionViewCell.swift in Sources */,
 				3A14CDDF1FB19F3200A2A203 /* WorkInfoCollectionViewCell.swift in Sources */,
+				3A567C252004ED9000F3F74B /* GoogleMapViewController.swift in Sources */,
 				3AFBE3F51FBAD76A0022A62A /* RealTimeNavigationViewController.swift in Sources */,
 				3AF2FBAE1FA9C92B00E2AF11 /* FacebookLoginViewController.swift in Sources */,
 				3A26F96E1FA2FAF400416A21 /* KYEmbedDrawerControllerSegue.swift in Sources */,
+				3A4975E51FFF8FC300DF5958 /* GSImageViewerController.swift in Sources */,
 				3A8F0BAD1FB5D83C00F2B1C9 /* RoundedView.swift in Sources */,
 				3A23BAF21FE91E150067B652 /* PrimaryFilledButton.swift in Sources */,
 				3A23BAEF1FE91E150067B652 /* IC_CGSizeExtensions.swift in Sources */,
@@ -699,12 +729,16 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FacebookCore\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FacebookLogin\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/FacebookShare\"",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks",
+					"$(PROJECT_DIR)/Pods",
 				);
 				INFOPLIST_FILE = PicKPost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.photo.PicKPost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PicKPost/PicKPost-Bridging-Header.h";
@@ -723,7 +757,12 @@
 				CODE_SIGN_ENTITLEMENTS = PicKPost/PicKPost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BN6425HHWW;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GooglePlaces/Frameworks",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = PicKPost/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

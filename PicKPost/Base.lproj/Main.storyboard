@@ -1375,6 +1375,36 @@
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="1435.2323838080961"/>
         </scene>
+        <!--Google Map View Controller-->
+        <scene sceneID="DZm-Ud-EOf">
+            <objects>
+                <viewController storyboardIdentifier="gms_map_vc" id="aEu-TD-JEW" customClass="GoogleMapViewController" customModule="PicKPost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="88j-8d-I8b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6m-bs-fEE" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nqi-fE-TH0" firstAttribute="trailing" secondItem="f6m-bs-fEE" secondAttribute="trailing" id="Osg-oI-GMA"/>
+                            <constraint firstItem="f6m-bs-fEE" firstAttribute="leading" secondItem="Nqi-fE-TH0" secondAttribute="leading" id="YSI-Cu-hNB"/>
+                            <constraint firstItem="Nqi-fE-TH0" firstAttribute="bottom" secondItem="f6m-bs-fEE" secondAttribute="bottom" id="qqE-rg-rFs"/>
+                            <constraint firstItem="f6m-bs-fEE" firstAttribute="top" secondItem="Nqi-fE-TH0" secondAttribute="top" id="rHM-x7-SRV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nqi-fE-TH0"/>
+                    </view>
+                    <connections>
+                        <outlet property="googleMapView" destination="f6m-bs-fEE" id="eOa-OH-qWl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdq-2W-ruJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="2125"/>
+        </scene>
         <!--Search Source Destination View Controller-->
         <scene sceneID="mUs-c6-e8O">
             <objects>
@@ -1890,7 +1920,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="239"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ieX-rU-4m9" id="kqs-ht-59Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="238.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIR-no-Pc3">
@@ -2556,18 +2586,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VBH-Jm-oM9" id="eTV-aD-UEC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TZ0-mj-wbW">
-                                            <rect key="frame" x="16" y="5" width="34" height="20"/>
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lrz-4W-6Kv">
-                                            <rect key="frame" x="16" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>

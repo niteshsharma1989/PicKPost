@@ -46,12 +46,6 @@ class FacebookLoginViewController: UIViewController
     }
     
     
-
-    
-    
-    
-    
-    
     fileprivate func initManageObjectContext()
     {
         managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

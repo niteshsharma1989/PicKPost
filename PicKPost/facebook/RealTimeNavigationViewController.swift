@@ -164,7 +164,7 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
         point1.subtitle = source.name
         mapView.addAnnotation(point1)
         
-        print("========== \(source.name)")
+        print(" \(String(describing: source.name))")
         
         point2.coordinate = CLLocationCoordinate2DMake(destination.placemark.coordinate.latitude,destination.placemark.coordinate.longitude)
         point2.title = destination.name
@@ -191,13 +191,13 @@ class RealTimeNavigationViewController: UIViewController, MKMapViewDelegate, CLL
             
             if error == nil
             {
-                print("Rout found")
+                print("Route found")
                 self.myRoute = response!.routes[0] as MKRoute
                 self.mapView.add(self.myRoute.polyline)
             }
             else
             {
-                print("Error while fgetching rout : \(error)")
+                print("Error while fetching route : \(String(describing: error))")
             }
             
         })

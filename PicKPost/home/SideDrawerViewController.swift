@@ -68,7 +68,9 @@ class SideDrawerViewController: UIViewController
         let navigationGesture = UITapGestureRecognizer(target: self, action: #selector(self.showNavigation(_:)))
         navigationView.addGestureRecognizer(navigationGesture)
         
-        
+        let profileImageGesture = UITapGestureRecognizer(target: self, action: #selector(self.showProfilePhoto(_:)))
+        profileImage.isUserInteractionEnabled = true
+        profileImage.addGestureRecognizer(profileImageGesture)
         
         self.navigationController?.navigationBar.barTintColor =  UIColor(red: 255/255, green: 163/255, blue: 60/255, alpha: 1.00)
     }
@@ -106,6 +108,23 @@ class SideDrawerViewController: UIViewController
             print(fetchError)
         }
     }
+    
+    
+    @objc func showProfilePhoto( _ sender : UITapGestureRecognizer)
+    {
+        
+        let imageInfo   = GSImageInfo(image: profileImage.image!, imageMode: .aspectFit)
+        let transitionInfo = GSTransitionInfo(fromView: profileImage!)
+        let imageViewer = GSImageViewerController(imageInfo: imageInfo, transitionInfo: transitionInfo)
+        print("======== Showing images")
+        imageViewer.dismissCompletion = {
+            print("dismissCompletion")
+        }
+        
+        present(imageViewer, animated: true, completion: nil)
+    }
+    
+    
     fileprivate func initImageView()
     {
         profileImage.layer.borderWidth = 1.0
